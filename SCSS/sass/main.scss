@@ -1,0 +1,28 @@
+/*
+ Theme Name:     Divi child
+ Description:    Theme Enfant Divi
+ Author:         les-matins.fr
+ Template:       Divi
+ Version:        2023
+*/
+
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./base/base";
+@import "./base/typography";
+@import "./base/classes";
+@import "./layouts/flex";
+
+@import "./components/accordion";
+@import "./components/bandeau-cookies";
+@import "./components/buttons";
+@import "./components/carrousel-wdcl";
+@import "./components/slider-ressources";
+
+@import "./layouts/_containers";
+@import "./layouts/_gestion_onglets";
+@import "./layouts/header";
+@import "./layouts/nav";
+
+@import "./pages/presentation_projets";

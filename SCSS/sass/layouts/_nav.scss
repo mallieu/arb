@@ -1,0 +1,125 @@
+/* Gestion menu */
+.et_pb_menu__wrap {
+
+	.menu-item {
+		a {
+			@include mediaqueries-min($medium) {
+				background: url(/wp-content/uploads/bg-nav.png) no-repeat scroll 50% 69%;
+				top: 1px;
+			}
+
+			color: map-get($couleurs, couleur--noir);
+			font-family: $typo--titre;
+			font-size: map-get($taille-texte, texte);
+			font-weight: map-get($graisse-texte, bold);
+			text-transform: uppercase;
+			transform-origin: bottom;
+
+			&:hover {
+				background-color: transparent !important;
+				color: map-get($couleurs, couleur--principale);
+
+				@include mediaqueries-min($medium) {
+
+					top: -3px;
+				}
+			}
+		}
+
+		&:last-child {
+			@include mediaqueries-min($medium) {
+				align-items: center;
+				background-color: map-get($couleurs, couleur--secondaire) !important;
+				border: 3px solid map-get($couleurs, couleur--secondaire);
+				border-radius: 10px 10px 0 0;
+				display: flex;
+				height: 70px;
+				margin: auto;
+				top: 4px;
+			}
+
+			a {
+				@include mediaqueries-min($medium) {
+
+					color: map-get($couleurs, couleur--blanc) !important;
+					top: -3px;
+				}
+			}
+
+			&:hover a {
+				@include mediaqueries-min($medium) {
+
+					color: map-get($couleurs, couleur--blanc) !important;
+				}
+			}
+		}
+
+		&:hover:last-child {
+			@include mediaqueries-min($medium) {
+				top: 0px;
+			}
+		}
+	}
+
+	@include mediaqueries-max($medium) {
+		.mobile_nav>ul {
+			width: 250px;
+			position: relative;
+			border-radius: 0 0 20px 20px;
+			flex-direction: column;
+			display: none;
+			text-align: right;
+		}
+
+		.mobile_nav {
+			position: absolute;
+			top: 30px;
+			right: -10px;
+			display: flex;
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+/* Définir la hauteur du menu (impacte le reste du menu) */
+.et_pb_menu .et_pb_menu__logo-wrap .et_pb_menu__logo {
+	height: 100px;
+	max-width: 100px !important;
+
+
+	@include mediaqueries-min($medium) {
+		height: 150px;
+
+	}
+
+	img {
+		height: 100px !important;
+		object-fit: contain;
+	}
+}
+
+@include mediaqueries-min($medium) {
+	.et-l--header .et_pb_section_0_tb_header {
+		height: 106px;
+		padding: 0;
+		border-bottom: 3px solid map-get($couleurs, couleur--secondaire);
+	}
+}
+
+/*Modifier le point de rupture du menu mobile*/
+@include mediaqueries-max($medium) {
+	.et_pb_menu .et_pb_menu__menu {
+		display: none;
+	}
+
+	.et_mobile_nav_menu {
+		display: block;
+	}
+
+	.et-l--header .et_pb_section_0_tb_header {
+		height: auto;
+		overflow: visible !important;
+		padding: 0;
+
+	}
+}

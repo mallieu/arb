@@ -1,0 +1,143 @@
+/* Empeche superposition onglets avec header */
+.et_pb_fullwidth_header {
+    z-index: 0;
+
+    /* Alignement du H1 avec le contenu de la page*/
+    .et_pb_fullwidth_header_container {
+        min-width: 80% !important;
+        overflow: visible !important;
+    }
+}
+
+/* Gestion des onglets */
+.features-list-tab {
+
+    // Apparence des titres tabs
+    .single-tab {
+        align-items: center;
+        background-color: map-get($couleurs, couleur--principale);
+        cursor: pointer;
+        display: flex;
+        flex: 0 0 30%;
+        margin-bottom: 0 !important;
+        max-width: 30%;
+        transform-origin: bottom;
+        transition: all 150ms;
+        top: 10px;
+        z-index: 1;
+
+        h2 {
+            color: map-get($couleurs, couleur--blanc);
+            font-weight: map-get($graisse-texte, bold);
+            font-size: map-get($taille-texte, titre-petit);
+            line-height: map-get($taille-line-height, titre-petit);
+            padding-left: 12px;
+        }
+
+        &:hover,
+        &.current {
+            background-color: map-get($couleurs, couleur--blanc);
+            top: 0;
+
+            h2 {
+                color: map-get($couleurs, couleur--principale);
+            }
+        }
+    }
+
+    // Section regroupant les onglets
+    .tab_content {
+        background-color: map-get($couleurs, couleur--gris-clair);
+        padding: 0 0 100px;
+    }
+
+    // Container onglets
+    .features-overview {
+        background-color: map-get($couleurs, couleur--blanc);
+        box-shadow: 0px 25px 20px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        margin: auto;
+        max-width: 90%;
+        padding: 0 50px 30px;
+        width: 80%;
+        z-index: 2;
+
+        .et_pb_text:first-child {
+            margin: 40px 0 !important;
+        }
+    }
+
+    @include mediaqueries-max($tablet) {
+        /* Permet de colorer et de gérer l'espacement tabs <> bannière */
+        background-color: map-get($couleurs, couleur--gris-clair);
+        padding-top: 7%;
+
+        .tabs {
+            .single-tab {
+                flex: 0 0 1;
+                height: 4rem;
+                margin-bottom: 2% !important;
+                min-width: 100%;
+                outline: solid 3px map-get($couleurs, couleur--principale);
+                outline-offset: -3px;
+                top: 0;
+                z-index: 1;
+
+                h2 {
+                    font-size: map-get($taille-texte, titre-petit);
+                    font-weight: map-get($graisse-texte, bold);
+                    text-align: center;
+                    padding-left: 0;
+                }
+
+                /* Gère l'écart avec la fin de la section*/
+                &:last-child {
+                    margin-bottom: 10% !important;
+                }
+            }
+
+        }
+    }
+
+    @include mediaqueries-max($phone) {
+        padding-top: 4%;
+
+        /* Adapte la largeur des containers aux tabs */
+        .features-overview {
+            width: 90%;
+        }
+    }
+}
+
+
+/* Variante bleu */
+#bleu {
+    .single-tab {
+        background-color: map-get($couleurs, couleur--alternative);
+
+        h2 {
+            color: map-get($couleurs, couleur--blanc);
+        }
+
+        &:hover,
+        &.current {
+            background-color: map-get($couleurs, couleur--blanc);
+
+            h2 {
+                color: map-get($couleurs, couleur--alternative);
+            }
+        }
+
+        @include mediaqueries-max($tablet) {
+            outline: solid 3px map-get($couleurs, couleur--alternative);
+        }
+    }
+
+}
+
+/* Gère les titres sur 2 lignes */
+@include mediaqueries-between($laptop, $very-large) {
+    .onglet-titre-2lines {
+        margin-top: -8px;
+    }
+}

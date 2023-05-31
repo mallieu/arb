@@ -1,0 +1,104 @@
+/* Gestion des sliders (style encart titre sur DIVI) */
+.et_pb_slider {
+    .et_pb_slides {
+
+        // Apparence du slider
+        .et_pb_slide {
+            height: 550px !important;
+            background-color: map-get($couleurs, couleur--beige);
+            border-radius: 0 15px 15px 15px;
+
+            @include mediaqueries-max($tablet) {
+                border-radius: 0 0 15px 15px;
+                height: auto !important;
+
+                .et_pb_slide_description {
+                    width: 100%;
+                    padding: map-get($taille-line-height, titre-petit) map-get($taille-line-height, texte);
+                }
+            }
+
+            .et_pb_slide_content {
+                color: map-get($couleurs, couleur--noir);
+                font-size: map-get($taille-texte, texte);
+                text-shadow: 0px 0px;
+                line-height: map-get($taille-line-height, titre-petit);
+                text-align: center;
+            }
+
+        }
+
+        .et_pb_slide_image {
+            & img {
+                height: 350px !important;
+                object-fit: contain;
+            }
+
+            @include mediaqueries-max($tablet) {
+                display: block !important;
+                margin: 5% 0 !important;
+                min-width: 100% !important;
+                position: relative !important;
+
+                img {
+                    max-height: 25vh !important;
+                }
+            }
+        }
+    }
+
+    .et-pb-slider-arrows {
+        .et-pb-arrow-next {
+            opacity: 1;
+            right: 5px;
+        }
+
+        .et-pb-arrow-prev {
+            opacity: 1;
+            left: 5px;
+        }
+
+        @include mediaqueries-max($tablet) {
+            &:before {
+                content: "";
+                display: block;
+                height: 6rem;
+            }
+
+            .et-pb-arrow-next,
+            .et-pb-arrow-prev {
+                background-color: map-get($couleurs, couleur--principale);
+                border-radius: 100%;
+                position: absolute;
+                top: 95%;
+            }
+        }
+    }
+
+    @include mediaqueries-max($tablet) {
+        overflow: visible !important;
+
+        .et-pb-controllers {
+            display: none;
+        }
+    }
+}
+
+/* Slider sans image */
+.slider__no-image {
+    .et_pb_slides .et_pb_slide {
+        height: 300px !important;
+
+        .et_pb_container {
+            max-height: 1px !important;
+        }
+
+        .et_pb_slide_description {
+            padding: 11%;
+        }
+
+        @include mediaqueries-max($tablet) {
+            height: auto !important;
+        }
+    }
+}

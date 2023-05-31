@@ -1,0 +1,12 @@
+/* Bandeau cookies */
+#cn-accept-cookie {
+	font-family: $typo--texte;
+	padding: 8px;
+	background-color: map-get($couleurs, couleur--principale);
+	border-radius: 15px;
+	color: map-get($couleurs, couleur--blanc);
+}
+
+
+/* 
+Fond beige, bouton vert foncé, lien vert clair, réduire taille lien */

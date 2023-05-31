@@ -1,0 +1,9 @@
+{
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "useTabs": false,
+    "htmlWhitespaceSensitivity": "strict",
+    "trailingComma": "es5",
+    "arrowParens": "always"
+}

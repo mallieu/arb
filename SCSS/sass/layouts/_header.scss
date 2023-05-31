@@ -1,0 +1,24 @@
+/* Bannière */
+.et-l--header {
+	.et_pb_section_0_tb_header {
+		overflow: hidden !important;
+
+		@include mediaqueries-max($tablet) {
+			overflow: visible !important;
+		}
+	}
+}
+
+/* Bannière texte centré via classe */
+.header {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+}
+
+/* Bannière full width - Bloc text */
+.et_pb_fullwidth_header .et_pb_fullwidth_header_container.center .header-content {
+	@include mediaqueries-max($phone) {
+		width: 100%;
+	}
+}

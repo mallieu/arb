@@ -1,0 +1,50 @@
+/* Carrousel wdcl */
+.wdcl_image_carousel {
+  img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .wdcl-image-title {
+    font-size: map-get($taille-texte, legende);
+    font-family: var(--typo-titre);
+    /* Permet de créer un bloc avec une taille minimale suffisante */
+
+    @include mediaqueries-max($tablet) {
+
+      padding-bottom: 10px !important;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .wdcl-image-subtitle {
+    margin-top: -0.75rem;
+    font-size: map-get($taille-texte, legende);
+    font-family: var(--typo-texte);
+
+    @include mediaqueries-max($phone) {
+
+      /* Permet de créer un bloc avec une taille automatisée */
+      padding-bottom: 30px !important;
+    }
+  }
+
+
+  // Bloc légende 
+  .content-inner {
+    background: #ECECEC;
+    padding: 2%;
+
+    @include mediaqueries-max($tablet) {
+      text-align: center;
+      min-height: 50px !important;
+    }
+  }
+}
+
+/* Utilisé pour les sliders logos */
+.logos-height img {
+  min-height: 150px !important;
+  max-height: 250px !important;
+  object-fit: contain;
+}

@@ -1,0 +1,24 @@
+/* Button standard */
+.et_pb_button_wrapper a {
+    font-family: $typo--titre;
+    font-weight: map-get($graisse-texte, bold) !important;
+}
+
+/* Enlève le style du button pour le transformer en texte cliquable (slider) */
+.button__transparent .et_pb_button_wrapper a {
+    background-color: transparent;
+    color: map-get($couleurs, couleur--principale) !important;
+    font-size: map-get($taille-texte, legende);
+    margin-top: 5px;
+    text-transform: none;
+
+    &:hover {
+        color: map-get($couleurs, couleur--secondaire) !important;
+        background-color: transparent !important;
+
+        &::after {
+            font-size: map-get($taille-texte, legende);
+            content: " \e004"
+        }
+    }
+}

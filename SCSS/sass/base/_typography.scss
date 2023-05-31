@@ -1,0 +1,129 @@
+// Liste Polices
+$typo--texte: "Nunito", Verdana, Arial, sans-serif;
+$typo--titre: "Jost", Trebuchet, Georgia, sans-serif;
+
+// Liste tailles
+$taille-texte: (
+	legende: 0.875rem,
+	texte: 1.125rem,
+	titre-petit: 1.5rem,
+	titre-moyen: 1.875rem,
+	titre-grand: 2.5rem
+);
+
+// Liste line-height
+$taille-line-height: (
+	legende: 0.875rem,
+	texte: 1.125rem,
+	titre-petit: 2rem,
+	titre-moyen: 2.5rem,
+	titre-grand: 3rem
+);
+
+// Liste graisses
+$graisse-texte: (
+	light: 100,
+	normal: 400,
+	bold: 600
+);
+
+/* Gestion typo rem */
+html {
+	font-size: 16px !important;
+}
+
+@include mediaqueries-max($tablet) {
+	html {
+		font-size: 14px !important;
+	}
+}
+
+body {
+	color: map-get($couleurs, couleur--gris);
+	font-family: $typo--texte;
+	font-size: map-get($taille-texte, texte);
+	font-weight: map-get($graisse-texte, normal);
+}
+
+@include mediaqueries-min($very-small) {
+
+	h1,
+	.style-h1,
+	.style-h1 p {
+		color: map-get($couleurs, couleur--principale);
+		font-family: $typo--titre;
+		font-weight: map-get($graisse-texte, bold);
+		font-size: map-get($taille-texte, titre-grand);
+		text-transform: uppercase;
+	}
+
+	h2,
+	.style-h2,
+	.style-h2 p {
+		color: map-get($couleurs, couleur--principale);
+		font-family: $typo--titre;
+		font-size: map-get($taille-texte, titre-moyen) !important;
+		font-weight: map-get($graisse-texte, bold);
+		text-transform: uppercase;
+	}
+
+	h3,
+	.style-h3,
+	.style-h3 p {
+		font-family: $typo--titre;
+		font-size: map-get($taille-texte, titre-petit);
+		font-weight: map-get($graisse-texte, normal);
+	}
+
+	// Configuration basique des typos selon leur catégorie
+	p,
+	a {
+		font-family: $typo--texte;
+		font-size: map-get($taille-texte, texte);
+		font-weight: map-get($graisse-texte, light);
+		text-decoration: none;
+	}
+
+	/* Style des listes */
+	ul li {
+		font-size: map-get($taille-texte, texte) !important;
+		list-style-type: none;
+		margin: 0.875rem 0;
+	}
+
+	.et_pb_text ul li:before,
+	.et_pb_accordion ul li:before {
+		content: "▪";
+		color: map-get($couleurs, couleur--principale);
+		display: inline-block;
+		height: 1rem;
+		width: 1rem;
+	}
+}
+
+// Gestion des graisses et de la mise en forme
+.texte {
+	&__majuscules {
+		text-transform: uppercase;
+	}
+
+	&__normal {
+		text-transform: none;
+	}
+
+	&__centrer {
+		text-align: center !important;
+	}
+
+	&__typo--titre {
+		font-family: $typo--titre;
+	}
+
+	&__typo--texte {
+		font-family: $typo--titre;
+	}
+
+	&__taille--legende {
+		font-size: map-get($taille-texte, legende);
+	}
+}

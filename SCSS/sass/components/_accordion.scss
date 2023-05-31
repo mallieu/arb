@@ -1,0 +1,19 @@
+/* Gestion de l'accordion */
+@media screen and (min-width: 981px) {
+
+    /* Application du style uniquement si classe two-columns */
+    .two-columns-accordion .et_pb_accordion_item {
+        width: 48% !important;
+        margin-right: 2%;
+        float: left !important;
+
+        &:nth-child(2n+1) {
+            clear: both;
+        }
+    }
+
+}
+
+h3.et_pb_toggle_title {
+    font-size: map-get($taille-texte, titre-petit);
+}

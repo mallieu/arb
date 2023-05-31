@@ -1,0 +1,40 @@
+/* Gestion flex */
+.flex {
+	display: flex;
+
+	&__centrage {
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__centrage-horizontal {
+		justify-content: center;
+	}
+
+	&__centrage-vertical {
+		align-items: center;
+	}
+
+	&__colonne {
+		flex-direction: column;
+	}
+
+	&__row {
+		flex-direction: row;
+	}
+
+	&__space-between {
+		justify-content: space-between;
+	}
+
+	&__end {
+		justify-content: end;
+	}
+}
+
+@include mediaqueries-max($tablet) {
+	.reverse {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}

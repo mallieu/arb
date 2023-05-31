@@ -1,0 +1,62 @@
+/** Permet de gérer les mediaqueries avec les variables issues de "Breakpoints" **/
+@mixin mediaqueries-min($width) {
+	@media only screen and (min-width: $width) {
+		@content;
+	}
+}
+
+@mixin mediaqueries-max($width) {
+	@media only screen and (max-width: $width) {
+		@content;
+	}
+}
+
+@mixin mediaqueries-between($min, $max) {
+	@media only screen and (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+// Mixin pour générer des classes de couleur
+@mixin generer-classes-couleur {
+
+	@each $couleur,
+	$valeur in $couleurs {
+		.#{$couleur} {
+			color: $valeur;
+		}
+	}
+}
+
+// Mixin pour générer des classes pour chaque valeur de graisse
+@mixin generer-classes-graisse-texte {
+
+	@each $graisse,
+	$valeur in $graisse-texte {
+		.#{$graisse} {
+			font-weight: $valeur;
+		}
+	}
+}
+
+// Mixin pour générer des classes pour chaque valeur de taille de texte
+@mixin generer-classes-taille-texte {
+
+	@each $nom,
+	$valeur in $taille-texte {
+		.#{$nom} {
+			font-size: $valeur;
+		}
+	}
+}
+
+// Mixin pour générer des classes pour chaque valeur de taille de line-height
+@mixin generer-classes-taille-line-height {
+
+	@each $nom,
+	$valeur in $taille-line-height {
+		.line-height-#{$nom} {
+			line-height: $valeur;
+		}
+	}
+}
