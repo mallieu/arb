@@ -23,6 +23,8 @@ thumbs.db
 # Ignore sensitive or environment-specific information
 config.ini
 secrets.yml
+ARB-FTP.xml
+ARB.code-workspace
 
 # Ignore dependencies
 /SCSS/node_modules

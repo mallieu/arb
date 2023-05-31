@@ -14,7 +14,7 @@ gulp.task("sass", function () {
         .pipe(rename("style.css")) // Renommer le fichier de sortie en 'style.css'
         .pipe(autoprefixer()) // Ajouter les préfixes CSS
         .pipe(sourcemaps.write(".")) // Write source maps to the same directory as CSS
-        .pipe(gulp.dest("../ChildTheme/DiviChild/")) // Chemin de sortie pour les fichiers CSS générés
+        .pipe(gulp.dest("../Divi child/")) // Chemin de sortie pour les fichiers CSS générés
 })
 
 // Tâche par défaut de Gulp

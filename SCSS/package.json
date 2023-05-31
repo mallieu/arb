@@ -4,7 +4,7 @@
     "description": "Projet 3 OC",
     "main": "index.js",
     "scripts": {
-        "sass": "sass ./sass/main.scss ../ChildTheme/DiviChild/style.css -w --style expanded",
+        "sass": "sass ./sass/main.scss ../Divi child/-w --style expanded",
         "prefix": "postcss ./sass/prefixed/style.css --use autoprefixer -o ./sass/prefixed/style.css"
     },
     "author": "Matthieu FLORENT",
