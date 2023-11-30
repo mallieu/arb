@@ -1,0 +1,9 @@
+.fiche-espece {
+    h3 {
+        font-weight: map-get($graisse-texte, bold) !important;
+    }
+
+    .et_pb_image {
+        @extend .mt50;
+    }
+}

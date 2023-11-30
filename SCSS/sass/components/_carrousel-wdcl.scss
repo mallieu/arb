@@ -48,3 +48,10 @@
   max-height: 250px !important;
   object-fit: contain;
 }
+
+// Slider fullscreen (1 image par clic)
+.carrousel-fullscreen img {
+  min-height: 66vh !important;
+  max-height: 80vh !important;
+  object-fit: contain;
+}

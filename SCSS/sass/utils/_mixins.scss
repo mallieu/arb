@@ -22,8 +22,10 @@
 
 	@each $couleur,
 	$valeur in $couleurs {
-		.#{$couleur} {
-			color: $valeur;
+
+		.#{$couleur},
+		.#{$couleur} p {
+			color: $valeur !important;
 		}
 	}
 }

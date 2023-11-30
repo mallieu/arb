@@ -1,0 +1,227 @@
+.ajax-loop--page-categorie {
+    margin-bottom: $m;
+    padding: $m;
+
+    @include mediaqueries-min($tablet) {
+        margin-top: $s;
+        margin-bottom: $l;
+    }
+
+
+
+    &.standard-row {
+        box-shadow: unset;
+        min-width: 100%;
+    }
+
+
+
+    // Bloc filtre
+    .ajax-loop_filters {
+
+        &--items {
+            @include mediaqueries-min($medium) {
+                background-color: #5999D3;
+                padding: 0 3rem;
+                margin-top: -114px;
+                position: sticky;
+                z-index: 20;
+                top: 0;
+            }
+
+            .et_pb_contact_field_options_title {
+                color: white !important;
+                z-index: -1;
+            }
+        }
+
+        // Apparence du bloc filtre sur mobile
+        #divi_filter {
+            margin-top: $s;
+            background-color: map-get($map: $couleurs, $key: couleur--alternative);
+            padding: 0 $s $s $s;
+            border-radius: $m;
+
+            @include mediaqueries-min($tablet) {
+                background-color: transparent !important;
+                padding: 0 !important;
+                border-radius: 0;
+                margin-top: 0;
+            }
+        }
+
+        // Titres des filtres
+        .et_pb_contact_field_options_title {
+            font-family: $typo--titre;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            font-size: $texte;
+            color: map-get($map: $couleurs, $key: couleur--alternative);
+            margin-top: $s;
+        }
+
+        // Positionne les boutons des filtres
+        .mobile_toggle_trigger.et_pb_button {
+            display: flex !important;
+            justify-content: center;
+        }
+
+        // Bouton pour activer filtres sur mobile 
+        .mobile_toggle_trigger.et_pb_button {
+            @extend .light-button;
+
+            @include mediaqueries-min($tablet) {
+                display: none !important;
+            }
+        }
+
+        // Bouton pour réinitialiser filtres 
+        .reset-filters.et_pb_button {
+            @extend .dark-button;
+
+            @include mediaqueries-min($tablet) {
+                width: 66%;
+            }
+        }
+    }
+
+    // Colonne contenant les résultats
+    .ajax-loop_results {
+        @include mediaqueries-min($tablet) {
+            padding: 0 3rem;
+        }
+    }
+
+    // Bloc contenant les informations
+    .ajax-loop_item {
+
+        // 1 row = 1 item
+        .et_pb_row {
+            width: 100%;
+            min-height: 66vh;
+            box-shadow: $bloc-shadow;
+            padding: $m 1.5rem !important;
+            border-radius: $xs;
+            min-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include mediaqueries-min($tablet) {
+                padding: $m !important;
+            }
+
+            @include mediaqueries-min($medium) {
+                min-height: 500px;
+                align-items: center;
+            }
+
+            // Premier item généré 
+            &:first-of-type {
+                margin-top: $m;
+
+                @include mediaqueries-max($tablet) {
+                    margin-top: $l;
+                }
+            }
+
+            // Garantit le comportement sur mobile des deux colonnes
+            .item-description,
+            .item-infos {
+                min-width: 100%;
+
+                @include mediaqueries-min($medium) {
+                    min-width: 50%;
+                }
+
+
+            }
+
+            .item-infos {
+
+                .dark-button {
+                    margin-top: $m;
+                    display: block;
+                }
+
+                @include mediaqueries-min($medium) {
+                    .dark-button {
+                        display: none;
+                    }
+                }
+            }
+
+
+            // Bloc titre + intro
+            .item-description {
+                @include mediaqueries-min($tablet) {
+                    padding-right: $m;
+                }
+
+                .dark-button {
+                    display: none;
+                }
+
+                @include mediaqueries-min($medium) {
+                    min-width: 50%;
+
+                    .dark-button {
+                        display: block;
+                    }
+                }
+
+                // Nom de l'animal
+                h3 {
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-bottom: $titre-moyen;
+                    color: map-get($map: $couleurs, $key: couleur--alternative);
+                    font-weight: $font-weight-bold;
+
+                    @include mediaqueries-min($medium) {
+                        text-align: left;
+                    }
+                }
+
+                .texte {
+                    margin-bottom: $s;
+                }
+            }
+
+            // Bloc image 
+            .item_image img {
+                max-height: 500px;
+            }
+
+            .dark-button .et_pb_module_inner {
+                @include mediaqueries-max($medium) {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            // Bouton du bloc vers la page
+            .et_pb_button {
+                text-align: center;
+
+                @include mediaqueries-min($small) {
+                    width: 66%;
+                }
+            }
+
+
+        }
+
+        // Bloc si aucune formation 
+        .no-results-layout {
+            .et_pb_row {
+                display: flex;
+                align-items: center;
+                min-height: 33vh;
+
+                h3 {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}

@@ -22,3 +22,32 @@
         }
     }
 }
+
+
+// Sur fond foncé
+.light-button {
+    &.et_pb_button {
+        border-color: white;
+        background-color: map-get($map: $couleurs, $key: couleur--alternative);
+        color: white;
+
+        &:hover {
+            background-color: white !important;
+            padding-right: .7em;
+            color: map-get($map: $couleurs, $key: couleur--alternative);
+        }
+    }
+}
+
+// Sur fond clair
+.dark-button {
+    &.et_pb_button {
+        border-color: white;
+        background-color: white;
+        color: map-get($map: $couleurs, $key: couleur--alternative);
+
+        &:hover {
+            background-color: white;
+        }
+    }
+}

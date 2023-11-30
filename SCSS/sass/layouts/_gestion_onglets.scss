@@ -58,7 +58,7 @@
         display: flex;
         margin: auto;
         max-width: 90%;
-        padding: 0 50px 30px;
+        padding: 0 30px 30px;
         width: 80%;
         z-index: 2;
 
@@ -136,8 +136,16 @@
 }
 
 /* Gère les titres sur 2 lignes */
-@include mediaqueries-between($laptop, $very-large) {
+@include mediaqueries-min($tablet) {
     .onglet-titre-2lines {
         margin-top: -8px;
+    }
+}
+
+
+/* Gère les titres sur 2 lignes */
+@include mediaqueries-between($tablet, $medium) {
+    .features-list-tab .single-tab h2 {
+        font-size: map-get($taille-texte, titre-petit) !important;
     }
 }
